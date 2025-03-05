@@ -31,7 +31,20 @@ const DELIVERY_STATUS = {
  * If a delivery is BOTH returned and delivered then it is returned
  * The other situations should be obvious.
  */
-const getDeliveryStatus = (delivery) => {};
+const getDeliveryStatus = (delivery) => {
+    if (delivery.isDelivered === true && delivery.isReturned === false) {
+        return DELIVERY_STATUS.DELIVERED;
+    }
+    else if (delivery.isDelivered === false && delivery.isReturned === true) {
+        return DELIVERY_STATUS.RETURNED;
+    }
+    else if (delivery.isDelivered === true && delivery.isReturned === true) {
+        return DELIVERY_STATUS.RETURNED;
+    }
+    else {
+        return DELIVERY_STATUS.PENDING;
+    }
+};
 
 /**
  * TEST CODE. DO NOT EDIT

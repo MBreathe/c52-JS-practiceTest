@@ -10,7 +10,9 @@
  * ]
  */
 
-const calculateTotalPriceInCents = (products) => {};
+const calculateTotalPriceInCents = (products) => {
+    return products.reduce((total, product) => total + product.priceInCents, 0)
+};
 
 /**
  * TEST CODE. DO NOT EDIT

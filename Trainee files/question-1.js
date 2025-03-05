@@ -9,7 +9,20 @@
  * - The array needs to have at least 1 item that has the `isDelivered` property set to `false`
  */
 
-
+const deliveries = [
+    {
+      description: 'a random delivery of apples',
+      isDelivered: true
+    },
+    {
+      description: 'a delivery of oranges to an older lady',
+      isDelivered: false
+    },
+    {
+      description: 'a delivery of watermelons to an office',
+      isDelivered: true
+    }
+];
 
 /**
  * TEST CODE. DO NOT EDIT

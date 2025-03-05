@@ -23,8 +23,19 @@
  * See the TEST CODE for an example of what the result should look like.
  */
 const getDeliveriesPerDriver = (deliveries) => {
-
-};
+  const newObj = {};
+  deliveries.forEach((delivery) => {
+    newObj[delivery.driverId] = [];
+  })
+  Object.keys(newObj).forEach((key) => {
+    deliveries.forEach((delivery) => {
+      if (key === delivery.driverId) {
+        newObj[key].push(delivery);
+      }
+    })
+  })
+  return newObj;
+}
 
 /**
  * TEST CODE. DO NOT EDIT
