@@ -1,0 +1,17 @@
+{
+  "name": "javascript-v5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "${file}",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-jest": "^27.0.6",
+    "jest": "^27.0.6"
+  }
+}
