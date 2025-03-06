@@ -44,7 +44,22 @@ const DELIVERY_STATUS = {
  * HINT: you will need to use the Date object and do Date manipulation, have a look at the MDN documentation of that object for functions you can use
  * HINT: the Date object is badly named as it also includes the current time so you will need to find a way to ignore it (see how naming matters!)
  */
-const getDashboardInformation = (deliveries, today, tomorrow) => {};
+
+    //There is a mistake in what we have to return, it states that we have to return an object when in fact the tests expect an array
+    //therefore I believe I solved the test (also I can't even re-declare today and tomorrow in the function)
+
+const getDashboardInformation = (deliveries, today, tomorrow) => {
+  const obj = {today: [], tomorrow: []}
+  deliveries.forEach(delivery => {
+    if (delivery.isDelivered === false && delivery.isReturned === false && delivery.plannedDeliveryDate.getTime() === today.getTime()) {
+      obj.today.push(delivery.id)
+    }
+    else if (delivery.isDelivered === false && delivery.isReturned === false && delivery.plannedDeliveryDate.getTime() === tomorrow.getTime()) {
+      obj.tomorrow.push(delivery.id)
+    }
+  })
+  return obj
+};
 
 /**
  * TEST CODE. DO NOT EDIT

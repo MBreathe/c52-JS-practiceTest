@@ -40,7 +40,19 @@ const partition = (array, checkFunction) => {
  * To run the test make sure you have done an `npm install` command in your terminal and then run `npm t` or `npm run test`
  */
 describe("partition", () => {
-  it("", () => {
-    expect(false).toBe(true);
+  const testArray = [true, false, true, false];
+  const checkingFn = (x) => x === true;
+  it("splits an array into two groups", () => {
+    const testResult = partition(testArray, checkingFn);
+    expect(testResult.length === 2).toBe(true);
   });
+  it("the first nested array includes only true", () => {
+    const testResult = partition(testArray, checkingFn);
+    expect(testResult[0].every(element => element === true)).toBe(true);
+  })
+  it("the second nested array includes only false", () => {
+    const testResult = partition(testArray, checkingFn);
+    expect(testResult[1].every(element => element === false)).toBe(true);
+  })
 });
+//I didn't get if I should've made tests designed to fail every time to indicate that they are working or if what I did is alright
